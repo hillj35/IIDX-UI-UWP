@@ -5,11 +5,79 @@
     xmlns:local="using:iidx_ui_uwp"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:data="using:iidx_ui_uwp.Model"
     xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
+    <Page.Resources>
+        <!-- When using x:Bind, you need to set x:DataType -->
+        <DataTemplate x:Name="ContactListViewTemplate" x:DataType="data:Game">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="100
+                               "/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="125"/>
+                    <ColumnDefinition Width="275"/>
+                </Grid.ColumnDefinitions>
+                <Image Source="{x:Bind ImageSrc}" MaxWidth="200">
+
+                </Image>
+                <Grid
+                Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="200"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Text="{x:Bind GameName}" 
+                            x:Phase="1"  
+                            Style="{ThemeResource BaseTextBlockStyle}"
+                            Margin="12,6,-10,0" FontSize="22" HorizontalAlignment="Right"/>
+                    <TextBlock Grid.Row="1"
+                            Text="{x:Bind GameSubName}" 
+                            x:Phase="2"
+                            Style="{ThemeResource BodyTextBlockStyle}"
+                            Margin="12,0,-10,6" FontSize="20" HorizontalAlignment="Right"/>
+                </Grid>
+
+            </Grid>
+        </DataTemplate>
+    </Page.Resources>
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition x:Name="MasterColumn" Width="400"/>
+            <ColumnDefinition x:Name="DetailColumn" Width="*"/>
+        </Grid.ColumnDefinitions>
+        
+        <ListView x:Name="MasterListView"
+            SelectionMode="Extended"
+            SelectionChanged="OnSelectionChanged"
+            IsItemClickEnabled="True"
+            ShowsScrollingPlaceholders="False"
+            ItemTemplate="{StaticResource ContactListViewTemplate }"
+            ItemClick="OnItemClick"
+            Grid.Row="0"
+            Grid.Column="0">
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                </Style>
+            </ListView.ItemContainerStyle>
+        </ListView>
+        <ContentPresenter
+            Grid.Column="1">
+        </ContentPresenter>
 
     </Grid>
 </Page>

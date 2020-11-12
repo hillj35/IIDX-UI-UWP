@@ -119,6 +119,10 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="GameSelectControl.xaml.cs">
+      <DependentUpon>GameSelectControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Game.cs" />
     <Compile Include="Subscreen.xaml.cs">
       <DependentUpon>Subscreen.xaml</DependentUpon>
     </Compile>
@@ -130,6 +134,13 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\GameLogos\CannonBallersLogo.png" />
+    <Content Include="Assets\GameLogos\CopulaLogo.png" />
+    <Content Include="Assets\GameLogos\HeroicVerseLogo.png" />
+    <Content Include="Assets\GameLogos\PendualLogo.png" />
+    <Content Include="Assets\GameLogos\RootageLogo.png" />
+    <Content Include="Assets\GameLogos\SinobuzLogo.png" />
+    <Content Include="Config\GameList.txt" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -144,6 +155,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="GameSelectControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Subscreen.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -157,6 +172,7 @@
       <Version>2.4.3</Version>
     </PackageReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

@@ -1,5 +1,7 @@
-﻿using System;
+﻿using iidx_ui_uwp.Model;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -22,9 +24,25 @@ namespace iidx_ui_uwp
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        private ObservableCollection<Game> Games;
+
         public MainPage()
         {
             this.InitializeComponent();
+
+            Games = Game.GetGames();
+            MasterListView.ItemsSource = Games;
+            MasterListView.SelectedIndex = 0;
+        }
+
+        private void OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void OnItemClick(object sender, ItemClickEventArgs e)
+        {
+
         }
     }
 }

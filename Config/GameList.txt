@@ -1,0 +1,7 @@
+﻿Beatmania IIDX 27,Heroic Verse,Assets/GameLogos/HeroicVerseLogo.png
+Beatoraja,,
+Beatmania IIDX 26,Rootage,Assets/GameLogos/RootageLogo.png
+Beatmania IIDX 25,Cannon Ballers,Assets/GameLogos/CannonBallersLogo.png
+Beatmania IIDX 24,Sinobuz,Assets/GameLogos/SinobuzLogo.png
+Beatmania IIDX 23,Copula,Assets/GameLogos/CopulaLogo.png
+Beatmania IIDX 22,Pendual,Assets/GameLogos/PendualLogo.png
